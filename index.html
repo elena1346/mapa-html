@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f6f2">
+  <title>Rusia, región a región</title>
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="contador.js" defer></script>
+</head>
+<body>
+  <main class="pagina">
+    <header class="encabezado">
+      <p class="ceja">ATLAS INTERACTIVO</p>
+      <h1>Rusia, <span>región a región</span></h1>
+      <p class="introduccion">Selecciona una región en el mapa para consultar su capital y su población aproximada.</p>
+    </header>
+
+    <section class="explorador" aria-label="Mapa interactivo de Rusia">
+      <div class="mapa-contenedor">
+        <div id="mapa" role="application" aria-label="Mapa de las regiones de Rusia"></div>
+        <p id="estado-mapa" class="estado-mapa" role="status" aria-live="polite">Cargando mapa…</p>
+      </div>
+      <aside class="ficha" aria-live="polite" aria-label="Información de la región seleccionada">
+        <div class="ficha-cabecera">
+          <span class="punto" aria-hidden="true"></span>
+          <span id="tipo-region">EXPLORA EL MAPA</span>
+        </div>
+        <h2 id="nombre-region">Elige una región</h2>
+        <p id="ayuda-region" class="ayuda-region">Pulsa sobre cualquier zona coloreada para ver sus datos.</p>
+        <dl id="datos-region" class="datos-region" hidden>
+          <div>
+            <dt>Capital</dt>
+            <dd id="capital-region"></dd>
+          </div>
+          <div>
+            <dt>Habitantes</dt>
+            <dd id="poblacion-region"></dd>
+          </div>
+        </dl>
+        <p id="nota-datos" class="nota-datos" hidden>Población estimada; cifra orientativa para la región completa.</p>
+        <div class="leyenda">
+          <span class="leyenda-muestra" aria-hidden="true"></span>
+          <span>Regiones administrativas</span>
+        </div>
+        <button id="reiniciar-mapa" class="boton" type="button">Ver todas las regiones</button>
+      </aside>
+    </section>
+
+    <footer>
+      <span>Mapa: <a href="https://github.com/codeforgermany/click_that_hood" target="_blank" rel="noreferrer">Click That ’Hood</a> · Poblaciones aproximadas (2023).</span>
+      <span>Se necesita conexión a Internet para cargar el mapa y sus límites regionales.</span>
+    </footer>
+  </main>
+</body>
+</html>
